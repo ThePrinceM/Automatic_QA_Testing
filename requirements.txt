@@ -1,0 +1,19 @@
+# AI-Powered Test Case Generation & Automation Framework
+# Core LLM & LangChain
+langchain>=0.3.0
+langchain-google-genai>=2.0.0
+langchain-core>=0.3.0
+
+# Environment & Configuration
+python-dotenv>=1.0.0
+
+# Data Validation
+pydantic>=2.0.0
+
+# Testing Framework
+pytest>=8.0.0
+pytest-html>=4.1.0
+
+# Console Output
+colorama>=0.4.6
+rich>=13.0.0

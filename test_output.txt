@@ -1,0 +1,31 @@
+﻿============================= test session starts =============================
+platform win32 -- Python 3.11.0, pytest-9.0.2, pluggy-1.6.0 -- C:\Users\Admin\AppData\Local\Programs\Python\Python311\python.exe
+cachedir: .pytest_cache
+metadata: {'Python': '3.11.0', 'Platform': 'Windows-10-10.0.26200-SP0', 'Packages': {'pytest': '9.0.2', 'pluggy': '1.6.0'}, 'Plugins': {'anyio': '4.12.1', 'langsmith': '0.7.17', 'html': '4.2.0', 'metadata': '3.1.1'}, 'JAVA_HOME': 'C:\\Program Files\\Eclipse Adoptium\\jdk-17.0.18.8-hotspot\\'}
+rootdir: D:\D,Drive\NVIDIA
+plugins: anyio-4.12.1, langsmith-0.7.17, html-4.2.0, metadata-3.1.1
+collecting ... collected 21 items
+
+tests/test_framework.py::TestConfig::test_config_import PASSED           [  4%]
+tests/test_framework.py::TestConfig::test_config_defaults PASSED         [  9%]
+tests/test_framework.py::TestConfig::test_config_paths_exist PASSED      [ 14%]
+tests/test_framework.py::TestConfig::test_config_summary PASSED          [ 19%]
+tests/test_framework.py::TestPrompts::test_prompts_import PASSED         [ 23%]
+tests/test_framework.py::TestPrompts::test_test_case_generation_prompt_variables PASSED [ 28%]
+tests/test_framework.py::TestPrompts::test_test_plan_parsing_prompt_variables PASSED [ 33%]
+tests/test_framework.py::TestPrompts::test_root_cause_prompt_variables PASSED [ 38%]
+tests/test_framework.py::TestModels::test_test_case_model PASSED         [ 42%]
+tests/test_framework.py::TestModels::test_test_suite_model PASSED        [ 47%]
+tests/test_framework.py::TestModels::test_test_plan_model PASSED         [ 52%]
+tests/test_framework.py::TestModels::test_root_cause_report_model PASSED [ 57%]
+tests/test_framework.py::TestModels::test_test_results_model PASSED      [ 61%]
+tests/test_framework.py::TestModels::test_test_results_no_failures PASSED [ 66%]
+tests/test_framework.py::TestResultAggregator::test_aggregate_results PASSED [ 71%]
+tests/test_framework.py::TestResultAggregator::test_format_summary_text PASSED [ 76%]
+tests/test_framework.py::TestSpecLoader::test_load_spec_file PASSED      [ 80%]
+tests/test_framework.py::TestSpecLoader::test_load_missing_file_raises PASSED [ 85%]
+tests/test_framework.py::TestSpecLoader::test_get_all_requirements PASSED [ 90%]
+tests/test_framework.py::TestRootCauseFormatter::test_format_empty_report PASSED [ 95%]
+tests/test_framework.py::TestRootCauseFormatter::test_format_report_with_failures PASSED [100%]
+
+============================= 21 passed in 0.26s ==============================
