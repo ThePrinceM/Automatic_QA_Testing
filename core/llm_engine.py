@@ -18,24 +18,39 @@ logger = logging.getLogger(__name__)
 
 def get_llm():
     """
-    Create a LangChain Google Gemini LLM instance.
+    Create a LangChain LLM instance based on configured provider.
+    
+    Supports:
+    - Gemini (Google)
+    - OpenRouter (multiple models)
     
     Returns:
-        BaseChatModel: A LangChain Gemini chat model instance.
+        BaseChatModel: A LangChain chat model instance.
     
     Raises:
-        EnvironmentError: If GOOGLE_API_KEY is missing.
+        EnvironmentError: If required API key is missing.
     """
     config.validate_config()
 
-    from langchain_google_genai import ChatGoogleGenerativeAI
-    logger.info(f"Initializing Google Gemini LLM: {config.MODEL_NAME}")
-    return ChatGoogleGenerativeAI(
-        model=config.MODEL_NAME,
-        google_api_key=config.GOOGLE_API_KEY,
-        temperature=config.LLM_TEMPERATURE,
-        convert_system_message_to_human=True,
-    )
+    if config.LLM_PROVIDER == "openrouter":
+        from langchain_openai import ChatOpenAI
+        logger.info(f"Initializing OpenRouter LLM: {config.MODEL_NAME}")
+        return ChatOpenAI(
+            model=config.MODEL_NAME,
+            api_key=config.OPENROUTER_API_KEY,
+            base_url=config.OPENROUTER_BASE_URL,
+            temperature=config.LLM_TEMPERATURE,
+        )
+    else:  # Default to Gemini
+        from langchain_google_genai import ChatGoogleGenerativeAI
+        logger.info(f"Initializing Google Gemini LLM: {config.MODEL_NAME}")
+        return ChatGoogleGenerativeAI(
+            model=config.MODEL_NAME,
+            google_api_key=config.GOOGLE_API_KEY,
+            temperature=config.LLM_TEMPERATURE,
+            convert_system_message_to_human=True,
+        )
+
 
 
 def invoke_chain(

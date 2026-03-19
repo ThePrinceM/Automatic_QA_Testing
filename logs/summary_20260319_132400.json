@@ -1,0 +1,15 @@
+{
+  "total_tests": 36,
+  "passed": 34,
+  "failed": 2,
+  "errors": 0,
+  "skipped": 0,
+  "pass_rate": 94.44444444444444,
+  "total_duration": 3.131099,
+  "generated_at": "2026-03-19T13:24:00.778246",
+  "failed_tests": [
+    "generated_tests/test_generated_20260319_132125.py::test_memory_allocation_edge_cases",
+    "generated_tests/test_generated_20260319_132353.py::test_memory_allocation_above_48GB"
+  ],
+  "error_tests": []
+}

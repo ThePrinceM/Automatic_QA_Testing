@@ -1,0 +1,20 @@
+{
+  "total_tests": 73,
+  "passed": 66,
+  "failed": 7,
+  "errors": 0,
+  "skipped": 0,
+  "pass_rate": 90.41095890410958,
+  "total_duration": 1.607993,
+  "generated_at": "2026-03-19T13:28:41.268503",
+  "failed_tests": [
+    "generated_tests/test_generated_20260319_132125.py::test_memory_allocation_edge_cases",
+    "generated_tests/test_generated_20260319_132353.py::test_memory_allocation_above_48GB",
+    "generated_tests/test_generated_20260319_132724.py::test_memory_transfer_bandwidth_below_threshold",
+    "generated_tests/test_generated_20260319_132724.py::test_memory_transfer_bandwidth_above_threshold",
+    "generated_tests/test_generated_20260319_132724.py::test_memory_transfer_edge_case_low_data_size",
+    "generated_tests/test_generated_20260319_132724.py::test_memory_transfer_edge_case_large_data_size",
+    "generated_tests/test_generated_20260319_132724.py::test_memory_transfer_integration_with_other_processes"
+  ],
+  "error_tests": []
+}

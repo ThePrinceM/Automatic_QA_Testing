@@ -21,11 +21,13 @@ GENERATED_TESTS_DIR.mkdir(exist_ok=True)
 LOGS_DIR.mkdir(exist_ok=True)
 
 # ── LLM Configuration ─────────────────────────────────────────
-LLM_PROVIDER = "gemini"
-MODEL_NAME = os.getenv("MODEL_NAME", "gemini-2.0-flash")
+LLM_PROVIDER = os.getenv("LLM_PROVIDER", "openrouter").lower()  # "openrouter" or "gemini"
+MODEL_NAME = os.getenv("MODEL_NAME", "openai/gpt-4-turbo-preview")
 
 # API Keys
 GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY", "")
+OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY", "")
+OPENROUTER_BASE_URL = os.getenv("OPENROUTER_BASE_URL", "https://openrouter.ai/api/v1")
 
 # LLM parameters
 LLM_TEMPERATURE = float(os.getenv("LLM_TEMPERATURE", "0.2"))
@@ -46,9 +48,19 @@ PYTEST_ARGS = [
 
 def validate_config():
     """Validate that required configuration is present."""
-    if not GOOGLE_API_KEY:
+    if LLM_PROVIDER == "gemini":
+        if not GOOGLE_API_KEY:
+            raise EnvironmentError(
+                "Configuration error:\n  • GOOGLE_API_KEY is required for Gemini LLM."
+            )
+    elif LLM_PROVIDER == "openrouter":
+        if not OPENROUTER_API_KEY:
+            raise EnvironmentError(
+                "Configuration error:\n  • OPENROUTER_API_KEY is required for OpenRouter LLM."
+            )
+    else:
         raise EnvironmentError(
-            "Configuration error:\n  • GOOGLE_API_KEY is required for Gemini LLM."
+            f"Configuration error:\n  • LLM_PROVIDER must be 'gemini' or 'openrouter', got '{LLM_PROVIDER}'"
         )
 
 

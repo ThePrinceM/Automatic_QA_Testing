@@ -1,0 +1,120 @@
+{
+  "requirement": "[Memory Transfer (Host ↔ Device)] Achieve at least 90% of theoretical PCIe bandwidth for DMA transfers",
+  "generated_at": "2026-03-19T13:27:24.719598",
+  "test_cases": [
+    {
+      "test_id": "TC_001",
+      "test_name": "test_memory_transfer_bandwidth_below_threshold",
+      "description": "Validate memory transfer bandwidth is below 90% of theoretical PCIe bandwidth for DMA transfers",
+      "category": "functional",
+      "priority": "high",
+      "preconditions": [
+        "System with GPU and appropriate drivers installed",
+        "DMA transfer mechanism configured"
+      ],
+      "steps": [
+        "Initiate a memory transfer from host to device",
+        "Measure the actual bandwidth achieved",
+        "Calculate the percentage of theoretical PCIe bandwidth achieved"
+      ],
+      "expected_result": "Memory transfer bandwidth should be below 90% of theoretical PCIe bandwidth",
+      "tags": [
+        "gpu",
+        "driver",
+        "memory",
+        "performance"
+      ]
+    },
+    {
+      "test_id": "TC_002",
+      "test_name": "test_memory_transfer_bandwidth_above_threshold",
+      "description": "Validate memory transfer bandwidth is above 90% of theoretical PCIe bandwidth for DMA transfers",
+      "category": "functional",
+      "priority": "high",
+      "preconditions": [
+        "System with GPU and appropriate drivers installed",
+        "DMA transfer mechanism configured"
+      ],
+      "steps": [
+        "Initiate a memory transfer from host to device",
+        "Measure the actual bandwidth achieved",
+        "Calculate the percentage of theoretical PCIe bandwidth achieved"
+      ],
+      "expected_result": "Memory transfer bandwidth should be above 90% of theoretical PCIe bandwidth",
+      "tags": [
+        "gpu",
+        "driver",
+        "memory",
+        "performance"
+      ]
+    },
+    {
+      "test_id": "TC_003",
+      "test_name": "test_memory_transfer_edge_case_low_data_size",
+      "description": "Validate memory transfer bandwidth for a very small data size",
+      "category": "edge_case",
+      "priority": "medium",
+      "preconditions": [
+        "System with GPU and appropriate drivers installed",
+        "DMA transfer mechanism configured"
+      ],
+      "steps": [
+        "Initiate a memory transfer with a very small data size from host to device",
+        "Measure the actual bandwidth achieved"
+      ],
+      "expected_result": "Memory transfer bandwidth should be accurately measured for small data sizes",
+      "tags": [
+        "gpu",
+        "driver",
+        "memory",
+        "performance"
+      ]
+    },
+    {
+      "test_id": "TC_004",
+      "test_name": "test_memory_transfer_edge_case_large_data_size",
+      "description": "Validate memory transfer bandwidth for a very large data size",
+      "category": "edge_case",
+      "priority": "medium",
+      "preconditions": [
+        "System with GPU and appropriate drivers installed",
+        "DMA transfer mechanism configured"
+      ],
+      "steps": [
+        "Initiate a memory transfer with a very large data size from host to device",
+        "Measure the actual bandwidth achieved"
+      ],
+      "expected_result": "Memory transfer bandwidth should be accurately measured for large data sizes",
+      "tags": [
+        "gpu",
+        "driver",
+        "memory",
+        "performance"
+      ]
+    },
+    {
+      "test_id": "TC_005",
+      "test_name": "test_memory_transfer_integration_with_other_processes",
+      "description": "Validate memory transfer bandwidth while other processes are running",
+      "category": "integration",
+      "priority": "high",
+      "preconditions": [
+        "System with GPU and appropriate drivers installed",
+        "DMA transfer mechanism configured",
+        "Multiple processes running concurrently"
+      ],
+      "steps": [
+        "Initiate a memory transfer from host to device while other processes are running",
+        "Measure the actual bandwidth achieved"
+      ],
+      "expected_result": "Memory transfer bandwidth should be stable and unaffected by other processes",
+      "tags": [
+        "gpu",
+        "driver",
+        "memory",
+        "performance"
+      ]
+    }
+  ],
+  "total_count": 5
+}
